@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-container .form {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container .form:nth-child(odd) {
+            margin-right: 10px;
+        }
+
+        .upload-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .upload-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .document-section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #333;
+            padding-left: 20px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <div class="dropdown">
+            <a href="employee.html">Employee</a>
+            <div class="dropdown-content">
+                <a href="list.html">List Details</a>
+            </div>
+        </div>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="container">
+        <h1>Employee Details</h1>
+
+        <div class="form-container">
+            <!-- Personal Details Form -->
+            <form id="personalForm" class="form">
+                <h2>Personal Detail</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </form>
+
+            <!-- Company Details Form -->
+            <form id="companyForm" class="form">
+                <h2>Company Detail</h2>
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" required>
+
+                <label for="companyMobile">Company Mobile Number:</label>
+                <input type="text" id="companyMobile" name="companyMobile" required>
+
+                <label for="employeeId">Employee ID:</label>
+                <input type="text" id="employeeId" name="employeeId" required>
+
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" required>
+
+                <label for="dateOfJoining">Company Date Of Joining:</label>
+                <input type="date" id="dateOfJoining" name="dateOfJoining" required>
+
+                <label for="designation">Designation:</label>
+                <select id="designation" name="designation" required>
+                    <option value="">Select Designation</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Technician">Technician</option>
+                </select>
+
+                <label for="companyPassword">Company Password:</label>
+                <input type="password" id="companyPassword" name="companyPassword" required>
+
+                <label for="companyEmail">Company Email:</label>
+                <input type="email" id="companyEmail" name="companyEmail" required>
+            </form>
+        </div>
+
+        <!-- Documentation Section -->
+
+        <div class="document-section">
+            <h2>Document Section</h2>
+            <div class="upload-btn">
+                <label for="file-upload">Upload Document</label>
+                <input type="file" id="file-upload" name="file-upload">
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" onclick="handleFormSubmit(event)">
+    </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const personalFormData = new FormData(document.getElementById('personalForm'));
+            const companyFormData = new FormData(document.getElementById('companyForm'));
+
+            const personalDetails = {};
+            personalFormData.forEach((value, key) => {
+                personalDetails[key] = value;
+            });
+
+            const companyDetails = {};
+            companyFormData.forEach((value, key) => {
+                companyDetails[key] = value;
+            });
+
+            // Combine personal and company details
+            const employeeDetails = {
+                ...personalDetails,
+                ...companyDetails
+            };
+
+            // Store the form data in localStorage
+            let employeeList = JSON.parse(localStorage.getItem('employeeList')) || [];
+            employeeList.push(employeeDetails);
+            localStorage.setItem('employeeList', JSON.stringify(employeeList));
+
+            // Redirect to the list page
+            window.location.href = 'list.html';
+        }
+    </script>
+</body>
+
+</html>
